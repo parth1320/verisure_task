@@ -1,0 +1,145 @@
+/* Additional custom styling */
+.container-full {
+  background-color: #cc1433; /* Red background color */
+  min-height: 100vh; /* Minimum height of viewport */
+  padding: 25px; /* Same padding as margin */
+}
+.card {
+  border-radius: 50px; /* Circular border */
+  background-color: white; /* White background color */
+  padding: 20px; /* Adjust padding as needed */
+  position: relative;
+  overflow: hidden;
+  height: 55vh;
+}
+.progress {
+  background-color: rgb(223, 216, 216); /* Gray background color */
+  border-radius: 10px; /* Rounded corners */
+  height: 8px; /* Height of the progress bar */
+  width: 70%; /* Full width */
+  margin: 10px auto; /* Add margin for spacing */
+}
+.progress-bar {
+  border-radius: 10px; /* Rounded corners */
+  background-color: red;
+}
+
+.round-border {
+  border: 2px solid gray;
+  border-radius: 20px; /* Rounded corners */
+  text-align: center;
+  width: 240px;
+  margin: 10px auto;
+  margin-top: 70px;
+}
+.red-btn {
+  background-color: red;
+  color: white;
+  border-radius: 50px; /* Rounded shape */
+  padding: 10px 20px;
+  width: 220px;
+  border: none;
+  cursor: pointer;
+}
+
+.text-center {
+  font-weight: bold;
+  text-align: center;
+}
+
+.btn-align {
+  margin-top: 80px;
+}
+
+.bottom-image-container {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.bottom-image {
+  width: 591px;
+  height: 257px;
+  margin-bottom: 200px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  color: white;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+  font-size: 26px;
+  font-weight: bold;
+  z-index: 1;
+  margin-bottom: 40px;
+}
+
+.contact-number {
+  margin-top: 10px; /* Add space above the contact number */
+  padding: 10px 20px;
+  color: white;
+  display: inline-block;
+}
+
+.telephone {
+  color: white;
+}
+
+.option-btn {
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+}
+.selected-option {
+  background-color: red;
+  color: white;
+}
+.checkbox {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border: 1px solid rgb(228, 223, 223);
+  border-radius: 3px;
+  display: inline-block;
+}
+.selected-checkbox {
+  background-color: red;
+  border: 1px solid red;
+}
+
+@media (max-width: 768px) {
+  .card {
+    margin: 20px;
+  }
+
+  .footer {
+    font-size: 10px;
+  }
+
+  .bottom-image-container {
+    position: static;
+    transform: none;
+    z-index: 1;
+  }
+
+  .bottom-image {
+    margin-bottom: 100px; /* Adjust the margin for smaller screens */
+  }
+}
+
+@media (min-width: 1200px) {
+  .bottom-image-container {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
