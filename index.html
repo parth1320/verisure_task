@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container-full">
+    <div class="container-full" id="container-red">
       <div class="row justify-content-center">
         <div class="col-md-6">
           <div class="card">
@@ -28,7 +28,7 @@
                 aria-valuemax="100"
               ></div>
             </div>
-            <form action="submit.php" method="post">
+            <form action="C:\xampp\htdocs\phpscripts\submit.php" method="post">
               <!-- Step 1: Postal-code -->
               <div id="step1" class="step">
                 <div>
@@ -48,6 +48,7 @@
                   class="form-control round-border"
                   maxlength="5"
                   required
+                  pattern="[0-9]{5}"
                 />
                 <div class="d-flex justify-content-center btn-align">
                   <button
@@ -76,7 +77,7 @@
                       <input
                         type="checkbox"
                         class="checkbox"
-                        onclick="nextStep(3, )"
+                        onclick="nextStep(3, 'utils/einzelhandel.jpg')"
                       />
                       Einzelhandel
                     </label>
@@ -84,7 +85,7 @@
                       <input
                         type="checkbox"
                         class="checkbox"
-                        onclick="nextStep(3)"
+                        onclick="nextStep(3, 'utils/lager.jpg')"
                       />
                       Lager
                     </label>
@@ -92,7 +93,7 @@
                       <input
                         type="checkbox"
                         class="checkbox"
-                        onclick="nextStep(3)"
+                        onclick="nextStep(3, 'utils/buro.jpg')"
                       />
                       Büro
                     </label>
@@ -100,7 +101,7 @@
                       <input
                         type="checkbox"
                         class="checkbox"
-                        onclick="nextStep(3)"
+                        onclick="nextStep(3, 'utils/restaurant.jpg')"
                       />
                       Restaurent
                     </label>
@@ -118,36 +119,36 @@
 
               <!-- Step 3: Phone-number -->
               <div id="step3" class="step" style="display: none">
-                <div>
-                  <h4
-                    class="text-center mt-3"
-                    style="width: 70%; margin: 10px auto"
-                  >
-                    Um den Termin zu vereinbaren, nennen Sie uns bitte Ihre
-                    Telefonnummer
-                  </h4>
-                  <input
-                    type="tel"
-                    id="phoneNumber"
-                    name="phoneNumber"
-                    placeholder="Telefonnummer"
-                    class="form-control round-border"
-                    required
-                  />
-                  <div class="d-flex justify-content-center btn-align">
-                    <button type="submit" class="btn red-btn">
-                      <span class="text-center">SENDEN</span>
-                      <img
-                        src="https://www.verisure.de/themes/custom/bootstrap_securitas/images/icons/svg/goto_alt.svg"
-                        alt="Next Logo"
-                        style="vertical-align: middle"
-                      />
-                    </button>
-                  </div>
+                <!-- <div class="step3-bg" id="step3-bg"></div> -->
+                <h4
+                  class="text-center mt-3"
+                  style="width: 70%; margin: 10px auto"
+                >
+                  Um den Termin zu vereinbaren, nennen Sie uns bitte Ihre
+                  Telefonnummer
+                </h4>
+                <input
+                  type="tel"
+                  id="phoneNumber"
+                  name="phoneNumber"
+                  placeholder="Telefonnummer"
+                  class="form-control round-border"
+                  required
+                  pattern="^\+49\d{10}$"
+                />
+                <div class="d-flex justify-content-center btn-align">
+                  <button type="submit" class="btn red-btn">
+                    <span class="text-center">SENDEN</span>
+                    <img
+                      src="https://www.verisure.de/themes/custom/bootstrap_securitas/images/icons/svg/goto_alt.svg"
+                      alt="Next Logo"
+                      style="vertical-align: middle"
+                    />
+                  </button>
                 </div>
               </div>
             </form>
-            <div class="bottom-image-container">
+            <div class="bottom-image-container" id="bottom-image-container">
               <img
                 src="utils/footer.png"
                 alt="Background Image"
@@ -166,19 +167,6 @@
       </div>
     </div>
 
-    <script>
-      function nextStep(stepNumber, backgroundImg) {
-        // Hide the current step
-        document.getElementById("step" + (stepNumber - 1)).style.display =
-          "none";
-        // Show the next step
-        document.getElementById("step" + stepNumber).style.display = "block";
-
-        // Update progress bar width based on step
-        const progressBar = document.querySelector(".progress-bar");
-        const width = (stepNumber - 1) * 50; // 3 steps, each taking 33.33% width
-        progressBar.style.width = width + "%";
-      }
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
