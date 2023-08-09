@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $postalCode = $_POST["postalCode"];
     $phoneNumber = $_POST["phoneNumber"];
 
-    $apiKey = 1234;
+
 
     $data = array(
         "api_key"=>"1234",
@@ -38,5 +38,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 }
 ?>
-
-

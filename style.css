@@ -156,4 +156,14 @@
     left: 50%;
     transform: translateX(-50%);
   }
+
+  @media (max-height: 768px) {
+    .bottom-image {
+      margin-bottom: 80px;
+    }
+
+    .card {
+      height: 60vh;
+    }
+  }
 }

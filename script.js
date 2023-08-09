@@ -30,6 +30,7 @@ function adjustTopImagePosition() {
   const windowHeight = window.innerHeight;
   const containerRed = document.getElementById("container-red");
   const containerRedBottom = containerRed.getBoundingClientRect().bottom;
+
   const formElements = document.querySelectorAll(".step .form-control .btn");
 
   //postion of the last form element
@@ -44,8 +45,9 @@ function adjustTopImagePosition() {
   const distance = lastFormElementBottom - containerRedBottom;
 
   if (distance < 0) {
-    const newBottom = windowHeight - containerRedBottom + distance;
+    const newBottom = containerRed - windowHeight + distance;
     bottomImageContainer.style.bottom = `${newBottom}px`;
+    console.log(newBottom);
   } else {
     bottomImageContainer.style.bottom = "0";
   }
